@@ -24,6 +24,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'com.google.googlejavaformat:google-java-format:1.26.0'
+    implementation("org.json:json:20250107")
 }
 
 tasks.named('test') {

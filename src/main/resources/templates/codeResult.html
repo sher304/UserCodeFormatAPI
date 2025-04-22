@@ -17,14 +17,17 @@
 </head>
 <body>
 
-<!--<textarea name="codeResult" id="codeResult" cols="30" rows="10" th:text="${userCode}"></textarea>-->
-<!--<h1 th:text="${codeOutput}"></h1>-->
-
     <h1>Original Code:</h1>
     <div class="code-box" th:text="${userCode}"></div>
 
     <h1>Formatted Code:</h1>
     <div class="code-box" th:text="${codeOutput}"></div>
+
+    <h2>Expiry in: </h2>
+    <div class="code-box" th:text="${expiry}"></div>
+
+    <h2>CodeID: </h2>
+    <div class="code-box" th:text="${codeId}"></div>
 
     <a href="/userForm">Back</a>
 

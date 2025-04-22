@@ -21,11 +21,10 @@ public class UserFormatterService {
 
     public String makeFormatter(String userCode) {
         try {
-            String output = formatter.formatSource(userCode);
-            System.out.println("Formatting result: " + output);
-            return output;
+            return formatter.formatSource(userCode);
         } catch (FormatterException e) {
-            return "// Error formatting code: " + e.getMessage() + "\n" + userCode;
+            System.out.println("THE ERROR: " + e.getMessage());
+            return "Error formatting code: " + e.getMessage();
         }
     }
 }

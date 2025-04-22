@@ -10,8 +10,22 @@
         <h2>Please enter your code in the form below:</h2>
         <textarea name="userCode" rows="4" cols="50">
         </textarea>
+        <br>
+        <label for="codeId">Enter a unique ID to save this code under:</label><br>
+        <input type="text" name="codeId" id="codeId" required><br><br>
+        <br>
+        <label for="expiry">How long to keep the code:</label><br>
+        <select name="expiry" id="expiry" required>
+            <option value="10">10 seconds</option>
+            <option value="60">1 minute</option>
+            <option value="3600">1 hour</option>
+            <option value="86400">1 day</option>
+            <option value="604800">1 week</option>
+            <option value="2592000">30 days</option>
+            <option value="7776000">90 days</option>
+        </select><br><br>
+
         <button type="submit">Save new note</button>
     </form>
-
 </body>
 </html>
