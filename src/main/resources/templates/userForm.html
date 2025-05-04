@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Form</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 <body>
-    <form method="post" action="/codeResult">
-        <h1>Welcome to the form.</h1>
-        <h2>Please enter your code in the form below:</h2>
-        <textarea name="userCode" rows="4" cols="50">
-        </textarea>
-        <br>
-        <label for="codeId">Enter a unique ID to save this code under:</label><br>
-        <input type="text" name="codeId" id="codeId" required><br><br>
-        <br>
-        <label for="expiry">How long to keep the code:</label><br>
-        <select name="expiry" id="expiry" required>
-            <option value="10">10 seconds</option>
-            <option value="60">1 minute</option>
-            <option value="3600">1 hour</option>
-            <option value="86400">1 day</option>
-            <option value="604800">1 week</option>
-            <option value="2592000">30 days</option>
-            <option value="7776000">90 days</option>
-        </select><br><br>
+<section>
+    <div class="card shadow p-4">
+        <h1 class="mb-4">Welcome to the Code Formatter</h1>
 
-        <button type="submit">Save new note</button>
-    </form>
+        <form method="post" th:action="@{/codeFormater/codeResult}">
+            <div class="mb-3">
+                <label for="userCode" class="form-label">Paste your Java code:</label>
+                <textarea id="userCode" name="userCode" class="form-control" rows="10" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="codeId" class="form-label">Enter a unique ID:</label>
+                <input type="text" id="codeId" name="codeId" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="expiry" class="form-label">How long to store the code:</label>
+                <select id="expiry" name="expiry" class="form-select" required>
+                    <option value="10">10 seconds</option>
+                    <option value="60">1 minute</option>
+                    <option value="3600">1 hour</option>
+                    <option value="86400">1 day</option>
+                    <option value="604800">1 week</option>
+                    <option value="2592000">30 days</option>
+                    <option value="7776000">90 days</option>
+                </select>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Save New Code</button>
+            </div>
+        </form>
+</div>
+</section>
 </body>
 </html>

@@ -19,12 +19,7 @@ public class UserFormatterService {
         this.formatter = formatter;
     }
 
-    public String makeFormatter(String userCode) {
-        try {
-            return formatter.formatSource(userCode);
-        } catch (FormatterException e) {
-            System.out.println("THE ERROR: " + e.getMessage());
-            return "Error formatting code: " + e.getMessage();
-        }
+    public String makeFormatter(String userCode) throws FormatterException {
+        return formatter.formatSource(userCode);
     }
 }

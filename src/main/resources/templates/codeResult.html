@@ -1,35 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Code Result</title>
-    <style>
-        .code-box {
-            border: 2px dashed black;
-            padding: 1rem;
-            white-space: pre-wrap;
-            font-family: monospace;
-            background-color: #f7f7f7;
-            margin-bottom: 1rem;
-        }
-    </style>
-
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/style.css}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 <body>
+<section>
+    <div class="card shadow p-4">
+        <h2 class="card-title mb-4">Formatted Java Code</h2>
 
-    <h1>Original Code:</h1>
-    <div class="code-box" th:text="${userCode}"></div>
+        <h1 th:text="${error}"></h1>
+        <pre class="bg-light p-3 rounded" th:text="${userCode}"></pre>
+        <h2>Formatter Code:</h2><br>
+        <textarea class="bg-light p-3 rounded" th:text="${codeOutput}"></textarea>
+        <pre class="bg-light p-3 rounded" th:text="${expiry}"></pre>
+        <pre class="bg-light p-3 rounded" th:text="${codeId}"></pre>
 
-    <h1>Formatted Code:</h1>
-    <div class="code-box" th:text="${codeOutput}"></div>
-
-    <h2>Expiry in: </h2>
-    <div class="code-box" th:text="${expiry}"></div>
-
-    <h2>CodeID: </h2>
-    <div class="code-box" th:text="${codeId}"></div>
-
-    <a href="/userForm">Back</a>
-
+        <a href="/codeFormater/userForm" class="btn btn-secondary mt-3">Format Another Code</a>
+        <i class="bi bi-amazon"></i>
+    </div>
+</section>
 </body>
 </html>
